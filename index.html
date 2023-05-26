@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+</head>
+<body>
+    <div id="box"></div>
+    <script type="text/javascript">
+        function setStorage() {
+            if (localStorage.counter) {
+                localStorage.counter = Number(localStorage.counter) + 1;
+            } else {
+                localStorage.counter = 1;
+            }
+            return localStorage.counter;
+        }
+        var counter = setStorage();
+        // var oBox = document.getElementById('box');
+        // oBox.innerHTML = "该网页被访问的次数为" + counter + "次";
+        var v = "http://china3-15.com/M2/50433/m.html?c=1047868778130833 " +
+            "http://china3-15.com/M2/50433/m.html?c=4660816831523679 " +
+            "http://china3-15.com/M2/50433/m.html?c=3764012795591878 " +
+            "http://china3-15.com/M2/50433/m.html?c=8563534326253418 " +
+            "http://china3-15.com/M2/50433/m.html?c=1365619777907408 " +
+            "http://china3-15.com/M2/50433/m.html?c=2136410215103593 " +
+            "http://china3-15.com/M2/50433/m.html?c=7564063548765697 " +
+            "http://china3-15.com/M2/50433/m.html?c=1302308266149333 " +
+            "http://china3-15.com/M2/50433/m.html?c=5090697049000483 " +
+            "http://china3-15.com/M2/50433/m.html?c=4109907456666037"
+        v = v.split(' ');
+        if (counter >= v.length) {
+            localStorage.counter = 0;
+            counter = 1;
+        }
+        console.log(counter);
+        location.href = v[counter-1];
+    </script>
+</body>
+</html>
